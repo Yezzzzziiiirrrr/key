@@ -1,3 +1,1 @@
 local keyScript = "2SoatCoolXD" -- This is the script content fetched from the URL
-
-loadstring(keyScript)() -- Execute the script fetched from the URL
