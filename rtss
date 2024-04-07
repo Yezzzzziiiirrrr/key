@@ -11,7 +11,7 @@ local function generateString(scriptContent, pattern)
 end
 
 -- Your loaded script goes here
-local loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
+local loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeyss"))()
 
 -- Define the pattern to search for
 local pattern = "pattern123"
