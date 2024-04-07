@@ -4,7 +4,7 @@ local TextBoxKey = Instance.new("TextBox")
 local TextLabel = Instance.new("TextLabel")
 local Enter = Instance.new("TextButton")
 
-local keyScript = loadstring(game:HttpGet("https://pastebin.com/raw/sVSD141a"))()
+local keyScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/rtss"))()
 local pattern = "pattern123"
 
 -- Function to get the key from the keyScript
