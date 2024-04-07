@@ -25,7 +25,7 @@ end
 
 -- Your loaded script goes here
 local loadedScript = [[
-    local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
+    local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/rts"))()
 ]]
 
 -- Define the pattern to search for
