@@ -18,14 +18,14 @@ local function generateString(scriptContent, pattern)
 		end
 		return str
 	else
-		print("false")
+		print("Pattern not found in the script.")
 		return false
 	end
 end
 
 -- Your loaded script goes here
 local loadedScript = [[
-    local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/rts"))()
+ loadstring(game:HttpGet(""))()
 ]]
 
 -- Define the pattern to search for
