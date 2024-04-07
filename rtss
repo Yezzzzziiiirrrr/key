@@ -1,1 +1,26 @@
-print
+-- Define the generateString function
+local function generateString(scriptContent, pattern)
+	-- Check if the pattern is found in the script
+	if string.find(scriptContent, pattern) then
+		return "2SoatCoolXD" -- Return the fixed string as the key
+	else
+		print("Pattern not found in the script.")
+		return false
+	end
+end
+
+-- Your loaded script goes here
+local loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeyss"))()
+
+-- Define the pattern to search for
+local pattern = "pattern123"
+
+-- Generate the string based on the loaded script and pattern
+local result = generateString(loadedScript, pattern)
+
+-- Return the result
+if result then
+	return {result}
+else
+	return {}
+end
