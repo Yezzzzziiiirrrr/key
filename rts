@@ -1,4 +1,5 @@
 -- THIS LOADSTRING IS loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/rts"))()
+print("yea")
 local function findPattern(scriptContent, pattern)
 	-- Search for the pattern within the script content
 	if string.find(scriptContent, pattern) then
