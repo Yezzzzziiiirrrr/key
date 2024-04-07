@@ -10,7 +10,7 @@ local function findPattern(script)
     end
 end
 
-local function generateString()
+local function generateString(script)
     -- Check if the pattern is found in the script
     if findPattern(script) then
         local str = ""
@@ -24,7 +24,13 @@ local function generateString()
     end
 end
 
-local result = generateString()
+-- Instances:
+local script = [[
+-- Your key script goes here
+local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
+]]
+
+local result = generateString(script)
 if result then
     return {result}
 else
