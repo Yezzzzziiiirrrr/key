@@ -1,41 +1,10 @@
--- Define the findPattern function
-local function findPattern(scriptContent)
-    -- Pattern to search for
-    local pattern = "BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333"
-
-    -- Search for the pattern within the script content
-    if string.find(scriptContent, pattern) then
-        return true
-    else
-        return false
-    end
-end
-
--- Define the generateString function
 local function generateString()
-    local script = "
-    -- Your key script goes here\n" ..
-    "local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys\"))()\n"
-    
-    -- Check if the pattern is found in the script
-    if findPattern(script) then
-        local str = ""
-        for _, v in ipairs({50, 83, 111, 97, 116, 67, 111, 111, 108, 88, 68, 49, 50, 51}) do
-            str = str .. string.char(v)
-        end
-        return str
-    else
-        print("false")
-        return false
+    local str = ""
+    for _, v in ipairs({50, 83, 111, 97, 116, 67, 111, 111, 108, 88, 68, 49, 50, 51}) do
+        str = str .. string.char(v)
     end
+    return str
 end
 
--- Call the generateString function
 local result = generateString()
-
--- Return the result
-if result then
-    return {result}
-else
-    return {}
-end
+return {result}
