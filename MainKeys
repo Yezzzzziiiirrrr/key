@@ -11,9 +11,10 @@ local function findPattern(scriptContent)
 end
 
 local function generateString()
-    local script = [[
-    local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
-    ]]
+    local script = "
+    -- Your key script goes here\n" ..
+    "local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet(\"https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys\"))()\n"
+    
     -- Check if the pattern is found in the script
     if findPattern(script) then
         local str = ""
