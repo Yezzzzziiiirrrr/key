@@ -1,18 +1,26 @@
-local function generateKey(scriptContent)
-    local key = ""
-    for _, v in ipairs({50, 83, 111, 97, 116, 67, 111, 111, 108, 88, 68}) do
-        key = key .. string.char(v)
-    end
-    return key
+-- Define the generateString function
+local function generateString(scriptContent, pattern)
+	-- Check if the pattern is found in the script
+	if string.find(scriptContent, pattern) then
+		return "2SoatCoolXD" -- Return the fixed string as the key
+	else
+		print("Pattern not found in the script.")
+		return false
+	end
 end
 
-local loadedScript = game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys")
-local generatedKey = generateKey(loadedScript)
-local pattern = "pattern123"
-local keyMatchesPattern = generatedKey == pattern
+-- Your loaded script goes here
+local loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
 
-if keyMatchesPattern then
-    return { generatedKey }
+-- Define the pattern to search for
+local pattern = "pattern123"
+
+-- Generate the string based on the loaded script and pattern
+local result = generateString(loadedScript, pattern)
+
+-- Return the result
+if result then
+	return {result}
 else
-    return {}
+	return {}
 end
