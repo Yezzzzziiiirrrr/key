@@ -1,9 +1,9 @@
-local function findPattern(script)
+local function findPattern(scriptContent)
     -- Pattern to search for
     local pattern = "BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333"
 
-    -- Search for the pattern within the script
-    if string.find(script, pattern) then
+    -- Search for the pattern within the script content
+    if string.find(scriptContent, pattern) then
         return true
     else
         return false
@@ -11,6 +11,9 @@ local function findPattern(script)
 end
 
 local function generateString()
+    local script = [[
+    local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
+    ]]
     -- Check if the pattern is found in the script
     if findPattern(script) then
         local str = ""
@@ -25,10 +28,6 @@ local function generateString()
 end
 
 -- Instances:
-local script = [[
-local BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333 = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
-]]
-
 local result = generateString()
 if result then
     return {result}
