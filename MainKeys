@@ -1,3 +1,4 @@
+-- Define the findPattern function
 local function findPattern(scriptContent)
     -- Pattern to search for
     local pattern = "BRO_2Soatisdagoattt1231323123_1231returnnnnnnnnnwdddddddddddd2333333333333333333333333333333333333333333333333333333"
@@ -10,6 +11,7 @@ local function findPattern(scriptContent)
     end
 end
 
+-- Define the generateString function
 local function generateString()
     local script = "
     -- Your key script goes here\n" ..
@@ -28,8 +30,10 @@ local function generateString()
     end
 end
 
--- Instances:
+-- Call the generateString function
 local result = generateString()
+
+-- Return the result
 if result then
     return {result}
 else
