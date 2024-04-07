@@ -1,1 +1,97 @@
-print
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local TextBoxKey = Instance.new("TextBox")
+local TextLabel = Instance.new("TextLabel")
+local Enter = Instance.new("TextButton")
+
+local keyScript = loadstring(game:HttpGet("https://pastebin.com/raw/sVSD141a"))()
+local pattern = "pattern123"
+
+-- Function to get the key from the keyScript
+local function getKey()
+	return keyScript[1] -- Access the first element of the table
+end
+
+-- Function to check if the loaded script contains the pattern
+local function containsPattern(scriptContent, pattern)
+	return string.find(scriptContent, pattern) ~= nil
+end
+
+
+--Properties:
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(89, 89, 89)
+Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Frame.Position = UDim2.new(0.320541352, 0, 0.221314907, 0)
+Frame.Size = UDim2.new(0, 259, 0, 144)
+
+TextBoxKey.Name = "TextBoxKey"
+TextBoxKey.Parent = Frame
+TextBoxKey.BackgroundColor3 = Color3.fromRGB(120, 120, 120)
+TextBoxKey.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxKey.Position = UDim2.new(0.17623584, 0, 0.569491625, 0)
+TextBoxKey.Size = UDim2.new(0, 170, 0, 23)
+TextBoxKey.Font = Enum.Font.SourceSans
+TextBoxKey.PlaceholderColor3 = Color3.fromRGB(30, 30, 30)
+TextBoxKey.PlaceholderText = "Key Here"
+TextBoxKey.Text = ""
+TextBoxKey.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextBoxKey.TextScaled = true
+TextBoxKey.TextSize = 14.000
+TextBoxKey.TextWrapped = true
+
+TextLabel.Parent = Frame
+TextLabel.BackgroundColor3 = Color3.fromRGB(111, 111, 111)
+TextLabel.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.Position = UDim2.new(0.0992366448, 0, 0.0382830761, 0)
+TextLabel.Size = UDim2.new(0, 210, 0, 28)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "2Soat Universal"
+TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+
+Enter.Name = "Enter"
+Enter.Parent = Frame
+Enter.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
+Enter.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Enter.Position = UDim2.new(0.33590734, 0, 0.79859978, 0)
+Enter.Size = UDim2.new(0, 85, 0, 21)
+Enter.Font = Enum.Font.SourceSans
+Enter.Text = "Enter"
+Enter.TextColor3 = Color3.fromRGB(0, 0, 0)
+Enter.TextScaled = true
+Enter.TextSize = 14.000
+Enter.TextWrapped = true
+
+local TweenService = game:GetService("TweenService")
+
+-- Function to handle the Enter button click event
+-- Function to handle the Enter button click event
+Enter.MouseButton1Click:Connect(function()
+	local enteredKey = TextBoxKey.Text -- Get the text entered in the TextBox
+	local correctKey = getKey() -- Get the correct key from the keyScript
+
+	-- Load the script and check for the pattern
+	local loadedScript = game:HttpGet("https://pastebin.com/raw/sVSD141a")
+	if enteredKey == correctKey and containsPattern(loadedScript, pattern) then
+		-- Proceed if the entered key is correct and the loaded script contains the pattern
+		Enter.Text = "Correct Key!"
+		wait(2)
+		ScreenGui:Destroy()
+		print("Correct Key! Loading Script")
+	else
+		Enter.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		Enter.Text = "Wrong Key"
+		wait(1)
+		local enterButtonTweenInfo = TweenInfo.new(0.5, Enum.EasingStyle.Linear, Enum.EasingDirection.Out)
+		local enterButtonTween = TweenService:Create(Enter, enterButtonTweenInfo, {BackgroundColor3 = Color3.fromRGB(0, 255, 0)})
+		enterButtonTween:Play()
+		Enter.Text = "Enter"
+	end
+end)
