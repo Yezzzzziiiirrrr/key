@@ -2,7 +2,7 @@
 local function generateString(scriptContent, pattern)
 	-- Check if the pattern is found in the script
 	if string.find(scriptContent, pattern) then
-		return "2SoatCoolXD" -- Return the fixed string as the key
+		return "urkeyhere" -- Return the fixed string as the key
 	else
 		print("Pattern not found in the script.")
 		return false
