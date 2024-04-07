@@ -1,41 +1,18 @@
--- THIS LOADSTRING IS loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/rts"))()
-print("yea")
-local function findPattern(scriptContent, pattern)
-	-- Search for the pattern within the script content
-	if string.find(scriptContent, pattern) then
-		return true
-	else
-		return false
-	end
+local function generateKey(scriptContent)
+    local key = ""
+    for _, v in ipairs({50, 83, 111, 97, 116, 67, 111, 111, 108, 88, 68}) do
+        key = key .. string.char(v)
+    end
+    return key
 end
 
--- Define the generateString function
-local function generateString(scriptContent, pattern)
-	-- Check if the pattern is found in the script
-	if findPattern(scriptContent, pattern) then
-		local str = ""
-		for _, v in ipairs({50, 83, 111, 97, 116, 67, 111, 111, 108, 88, 68}) do
-			str = str .. string.char(v)
-		end
-		return str
-	else
-		print("Pattern not found in the script.")
-		return false
-	end
-end
-
--- Your loaded script goes here
-local loadedScript = loadstring(game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys"))()
-
--- Define the pattern to search for
+local loadedScript = game:HttpGet("https://raw.githubusercontent.com/Yezzzzziiiirrrr/key/main/MainKeys")
+local generatedKey = generateKey(loadedScript)
 local pattern = "pattern123"
+local keyMatchesPattern = generatedKey == pattern
 
--- Generate the string based on the loaded script and pattern
-local result = generateString(loadedScript, pattern)
-
--- Return the result
-if result then
-	return {result}
+if keyMatchesPattern then
+    return { generatedKey }
 else
-	return {}
+    return {}
 end
