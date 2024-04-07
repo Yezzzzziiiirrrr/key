@@ -1,10 +1,1 @@
-local function generateString()
-    local str = ""
-    for _, v in ipairs({50, 83, 111, 97, 116, 67, 111, 111, 108, 88, 68}) do
-        str = str .. string.char(v)
-    end
-    return str
-end
-
-local result = generateString()
-return {result}
+print("noob")
