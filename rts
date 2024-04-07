@@ -1,3 +1,4 @@
+print("V2")
 -- Define the generateString function
 local function generateString(scriptContent, pattern)
 	-- Check if the pattern is found in the script
